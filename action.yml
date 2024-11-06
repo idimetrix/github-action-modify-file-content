@@ -1,0 +1,64 @@
+name: 'Modify File Content'
+author: 'Dmitrii Selikhov'
+description: 'Replace text content and submit content'
+inputs:
+  token:
+    description: 'Your GITHUB_TOKEN'
+    default: ${{ github.token }}
+    required: false
+  body:
+    description: 'what needs to be replaced'
+    default: ''
+    required: true
+  path:
+    description: 'File to be replaced'
+    default: ''
+    required: false
+  ref:
+    description: 'The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)'
+    default: ''
+    required: false
+  branch:
+    description: 'The person that committed the file. Default: the authenticated user.'
+    default: ${{ github.ref_name }}
+    required: false
+  message:
+    description: 'The commit message.'
+    default: ''
+    required: false
+  committer_name:
+    description: 'The name of the author or committer of the commit.'
+    default: 'github-actions[bot]'
+    required: false
+  committer_email:
+    description: 'The email of the author or committer of the commit.'
+    default: 'github-actions[bot]@users.noreply.github.com'
+    required: false
+  openDelimiter:
+    description: 'Character to use for opening delimiter, by default `<!--GAMFC-->`'
+    default: '<!--GAMFC-->'
+    required: false
+  closeDelimiter:
+    description: 'Character to use for closing delimiter, by default `<!--GAMFC-END-->`'
+    default: '<!--GAMFC-END-->'
+    required: false
+  overwrite:
+    description: 'overwrite file'
+    default: 'false'
+    required: false
+  sync_local_file:
+    description: 'Sync local file content'
+    default: 'true'
+    required: false
+
+outputs:
+  content:
+    description: 'text file content'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'list'
+  color: 'blue'

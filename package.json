@@ -1,0 +1,56 @@
+{
+  "name": "github-action-modify-file-content",
+  "version": "1.0.0",
+  "description": "Replace text content and submit content",
+  "license": "MIT",
+  "homepage": "https://github.com/idimetrix/github#readme",
+  "url": "https://github.com/idimetrix/github-action-contributors/issue",
+  "bugs": {
+    "url": "https://github.com/idimetrix/github-action-contributors/issues"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Dmitrii Selikhov",
+    "email": "dmitrii.selikhov@gmail.com",
+    "url": "https://www.linkedin.com/in/dimetrix"
+  },
+  "contributors": [
+    {
+      "name": "Dmitrii Selikhov",
+      "email": "dmitrii.selikhov@gmail.com",
+      "url": "https://www.linkedin.com/in/dimetrix"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idimetrix/github-action-modify-file-content.git"
+  },
+  "email": "dmitrii.selikhov@gmail.com",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "husky",
+    "build": "ncc build src/index.ts -o dist",
+    "watch": "ncc watch src/index.ts -o dist",
+    "type": "tsc --noEmit --incremental",
+    "prettier": "prettier --write src/**",
+    "format": "npm run prettier && npm run type",
+    "bootstrap": "npm install && npm run format"
+  },
+  "engines": {
+    "node": ">=v20.11.0",
+    "npm": ">=10.2.4"
+  },
+  "dependencies": {
+    "@actions/core": "1.11.1",
+    "@actions/github": "6.0.0",
+    "@uiw/formatter": "2.0.2",
+    "fs-extra": "11.2.0"
+  },
+  "devDependencies": {
+    "@kkt/ncc": "1.1.2",
+    "husky": "9.1.6",
+    "prettier": "3.3.3",
+    "typescript": "5.6.3",
+    "lint-staged": "15.2.10"
+  }
+}
