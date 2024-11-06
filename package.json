@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Replace text content and submit content",
   "license": "MIT",
-  "homepage": "https://github.com/idimetrix/github#readme",
-  "url": "https://github.com/idimetrix/github-action-contributors/issue",
+  "homepage": "https://github.com/idimetrix/github-action-modify-file-content#readme",
+  "url": "https://github.com/idimetrix/github-action-modify-file-content",
   "bugs": {
-    "url": "https://github.com/idimetrix/github-action-contributors/issues"
+    "url": "https://github.com/idimetrix/github-action-modify-file-content/issues"
   },
   "keywords": [],
   "author": {
